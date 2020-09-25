@@ -6,7 +6,7 @@
 
 ## 大概思路
 
-首先使用 Processing 程序控制 Kinect2，Kinect2 对人体进行检测。当 Kinect2 检测结果出来以后，建立一个客户端向服务器发送检测的结果。用 Nodejs 搭建一个服务器，接受客户端传来的检测结果，根据结果通过 EtherDream 去控制激光的形状。
+首先使用 [Processing](https://processing.org/) 程序控制 [Kinect2](https://developer.microsoft.com/zh-cn/windows/kinect/)，Kinect2 对人体进行检测。当 Kinect2 检测结果出来以后，建立一个客户端向服务器发送检测的结果。用 [Nodejs](https://nodejs.org/zh-cn/) 搭建一个服务器，接受客户端传来的检测结果，根据结果通过 [EtherDream](https://ether-dream.com/) 去控制激光的形状。
 
 ## 开发
 
@@ -22,7 +22,7 @@
 
 ### 硬件准备
 
-将 Kinect2 和 EtherDream 都和电脑相连接，同时 EtherDream 也和电脑相连。
+将 Kinect2 和 EtherDream 都和电脑相连接，同时 EtherDream 也和激光相连。
 
 ### 运行
 
@@ -33,7 +33,7 @@
 
 ## 介绍
 
-Kinect2 可以获得深度数据，这样我们就可以通过某个区域的深度判断该区域一定距离内有没有数据，下面是关键代码。
+Kinect2 可以获得深度数据，这样我们就可以通过某个区域的深度判断该区域一定距离内有没有物体，下面是关键代码。
 
 ```java
 Boolean hasObject(int x, int y, int w, int h, int minDepth, int maxDepth) {
@@ -71,7 +71,7 @@ void drawRect() {
 }
 ```
 
-Nodejs 开启服务器获得从 Kinect2 获得检测结果。
+Nodejs 开启服务器获得从 Kinect2 获得的检测结果。
 
 ```js
 export default function () {
@@ -98,7 +98,7 @@ export default function () {
 }
 ```
 
-Nodejs 根据检测结果通过 EtherDream 控制激光。
+Nodejs 根据检测结果通过 EtherDream 控制激光，基于 Nodejs 控制激光的方法请参考这个[仓库](https://github.com/ofcourseio/laser-dac-tutorials)。
 
 ```js
 import { DAC } from "@laser-dac/core";
