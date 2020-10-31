@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@laser-dac/core": "^0.4.1",
+    "@laser-dac/draw": "^0.6.0",
+    "@laser-dac/ether-dream": "^0.4.1",
+    "@laser-dac/simulator": "^0.3.3"
+  }
+}
