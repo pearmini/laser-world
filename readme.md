@@ -27,7 +27,7 @@
 
 ### 软件准备
 
-- 安装 Processing，同时安装相关的插件：如果是 mac 电脑，安装 openkinect；如果是 windows 电脑，安装 kinectPV2
+- 安装 Processing，同时安装相关的插件：如果是 mac 电脑，安装 openkinect；如果是 windows 电脑，可以将 lib 下面的 KinectPV2.rar 解压，并且放入 Processing 的 Libraries 文件夹。
 - 安装 Nodejs
 - 安装 Yarn
 
